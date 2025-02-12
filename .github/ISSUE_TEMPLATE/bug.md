@@ -2,7 +2,7 @@
 name: BUG
 about: 수정돼야 할 버그를 기록할 때
 title: "[BUG]"
-labels: ''
+labels: bug
 assignees: ''
 
 ---
