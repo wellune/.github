@@ -1,0 +1,19 @@
+name: Notify Teams on Tag Push
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send to Teams
+        uses: jdcargile/ms-teams-notification@v1.4
+        with:
+          teams_webhook_url: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          title: "🔖 새 태그: ${{ github.ref_name }}"
+          message: |
+            Repo: ${{ github.repository }}
+            Pusher: ${{ github.actor }}
+            SHA: ${{ github.sha }}
