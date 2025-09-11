@@ -1,5 +1,6 @@
 name: Notify Teams on Tag Push
 on:
+  workflow_call:
   push:
     tags:
       - '*'
